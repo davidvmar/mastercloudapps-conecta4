@@ -31,4 +31,8 @@ public class Player {
         }
         return false;
     }
+
+    public Color getColor() {
+        return this.color;
+    }
 }

@@ -48,4 +48,8 @@ public class Turn {
     public int getCurrentPlayerIndex() {
         return currentPlayerIndex;
     }
+
+    public Color getCurrentColor() {
+        return this.getCurrentPlayer().getColor();
+    }
 }

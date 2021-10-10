@@ -1,5 +1,6 @@
 package net.dvazquez.conecta4.model.board;
 
+import net.dvazquez.conecta4.model.color.Color;
 import net.dvazquez.conecta4.model.game.Chip;
 
 import java.util.ArrayList;
@@ -26,9 +27,14 @@ public class Column {
         return this.places.stream().noneMatch(Place::isEmpty);
     }
 
-    public void addChip(Chip chip) {
+    public Place addChip(Chip chip) {
         Place placeToAdd = places.stream().filter(Place::isEmpty).findFirst().orElse(null);
         assert placeToAdd != null;
         placeToAdd.setChip(chip);
+        return placeToAdd;
+    }
+
+    public Color getColorByPosition(Integer position) {
+        return this.places.get(position).getColor();
     }
 }

@@ -26,7 +26,8 @@ public class Connecta4View {
             if (!this.connecta4.getTurn().putChip(column)) {
                 new ErrorView().print(Messages.ERROR_COLUMN_OUT_OF_INDEX);
             }
-        } while (!this.connecta4.getBoard().hasGoal());
+        } while (!this.connecta4.hasGoal());
+        this.boardView.print();
     }
 
     public static void main(String[] args) {
