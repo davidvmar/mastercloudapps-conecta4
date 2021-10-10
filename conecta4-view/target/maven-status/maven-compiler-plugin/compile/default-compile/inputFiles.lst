@@ -1,5 +1,7 @@
-C:\Users\dvazquez\Documents\MASTER_CLOUD_APPS\Módulo I\conecta4\conecta4-view\src\main\java\net\dvazquez\conecta4\view\game\Connecta4View.java
-C:\Users\dvazquez\Documents\MASTER_CLOUD_APPS\Módulo I\conecta4\conecta4-view\src\main\java\net\dvazquez\conecta4\view\turn\TurnView.java
-C:\Users\dvazquez\Documents\MASTER_CLOUD_APPS\Módulo I\conecta4\conecta4-view\src\main\java\net\dvazquez\conecta4\view\game\GreetingView.java
-C:\Users\dvazquez\Documents\MASTER_CLOUD_APPS\Módulo I\conecta4\conecta4-view\src\main\java\net\dvazquez\conecta4\view\error\ErrorView.java
-C:\Users\dvazquez\Documents\MASTER_CLOUD_APPS\Módulo I\conecta4\conecta4-view\src\main\java\net\dvazquez\conecta4\view\board\BoardView.java
+C:\Users\dvazquez\Documents\MASTER_CLOUD_APPS\Módulo I\conecta4\conecta4-view\src\main\java\net\dvazquez\conecta4\views\Messages.java
+C:\Users\dvazquez\Documents\MASTER_CLOUD_APPS\Módulo I\conecta4\conecta4-view\src\main\java\net\dvazquez\conecta4\views\console\TurnView.java
+C:\Users\dvazquez\Documents\MASTER_CLOUD_APPS\Módulo I\conecta4\conecta4-view\src\main\java\net\dvazquez\conecta4\views\console\BoardView.java
+C:\Users\dvazquez\Documents\MASTER_CLOUD_APPS\Módulo I\conecta4\conecta4-view\src\main\java\net\dvazquez\conecta4\views\console\GreetingView.java
+C:\Users\dvazquez\Documents\MASTER_CLOUD_APPS\Módulo I\conecta4\conecta4-view\src\main\java\net\dvazquez\conecta4\views\console\Connecta4View.java
+C:\Users\dvazquez\Documents\MASTER_CLOUD_APPS\Módulo I\conecta4\conecta4-view\src\main\java\net\dvazquez\conecta4\views\ErrorView.java
+C:\Users\dvazquez\Documents\MASTER_CLOUD_APPS\Módulo I\conecta4\conecta4-view\src\main\java\net\dvazquez\conecta4\views\console\ErrorView.java

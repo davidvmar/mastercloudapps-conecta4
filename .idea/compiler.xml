@@ -6,40 +6,34 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="withoutDoubleDispatching" />
+        <module name="basic (1) (documentView)" />
+        <module name="withDoubleDispatching" />
+        <module name="withoutPrototype" />
+        <module name="withPrototype" />
+        <module name="basic (2) (domainModel)" />
         <module name="conecta4-model" />
+        <module name="passiveView" />
+        <module name="withoutProxy" />
+        <module name="supervisorController" />
+        <module name="withDAO" />
+        <module name="withoutFactoryMethod" />
+        <module name="machine (2) (domainModel)" />
+        <module name="prototype" />
+        <module name="doubleDispatching" />
         <module name="conecta4-view" />
+        <module name="modelViewController" />
+        <module name="basic (3) (presentationModel)" />
+        <module name="withProxy" />
+        <module name="withComposite" />
+        <module name="withFacade" />
+        <module name="withoutDAO" />
+        <module name="withFactoryMethod" />
+        <module name="conecta4-utils" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="basic (1) (documentView)" target="11" />
-      <module name="basic (2) (domainModel)" target="11" />
-      <module name="basic (3) (presentationModel)" target="11" />
       <module name="Conecta4" target="8" />
-      <module name="conecta4" target="8" />
-      <module name="documentView" target="11" />
-      <module name="domainModel" target="11" />
-      <module name="doubleDispatching" target="11" />
-      <module name="machine (1) (documentView)" target="11" />
-      <module name="machine (2) (domainModel)" target="11" />
-      <module name="modelViewController" target="11" />
-      <module name="modelViewPresenter" target="11" />
-      <module name="passiveView" target="11" />
-      <module name="presentationModel" target="11" />
-      <module name="prototype" target="11" />
-      <module name="solution.java.swing.socket.sql" target="11" />
-      <module name="supervisorController" target="11" />
-      <module name="withComposite" target="11" />
-      <module name="withDAO" target="11" />
-      <module name="withDoubleDispatching" target="11" />
-      <module name="withFacade" target="11" />
-      <module name="withFactoryMethod" target="11" />
-      <module name="withoutDAO" target="11" />
-      <module name="withoutDoubleDispatching" target="11" />
-      <module name="withoutFactoryMethod" target="11" />
-      <module name="withoutPrototype" target="11" />
-      <module name="withoutProxy" target="11" />
-      <module name="withPrototype" target="11" />
-      <module name="withProxy" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
