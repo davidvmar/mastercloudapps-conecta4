@@ -11,6 +11,7 @@
     <modules>
         <module>conecta4-model</module>
         <module>conecta4-view</module>
+        <module>conecta4-utils</module>
     </modules>
 
     <properties>

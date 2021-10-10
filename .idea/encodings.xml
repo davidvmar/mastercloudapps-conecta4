@@ -24,6 +24,8 @@
     <file url="file://$PROJECT_DIR$/../USantaTecla/java.swing.socket.sql/modelViewPresenter/supervisorController/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/conecta4-model/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/conecta4-model/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/conecta4-utils/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/conecta4-utils/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/conecta4-view/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/conecta4-view/src/main/resources" charset="UTF-8" />
   </component>
