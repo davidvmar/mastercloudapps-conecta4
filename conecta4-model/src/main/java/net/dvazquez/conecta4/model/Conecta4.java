@@ -1,6 +1,7 @@
 package net.dvazquez.conecta4.model;
 
 import net.dvazquez.conecta4.model.board.Board;
+import net.dvazquez.conecta4.model.color.Color;
 import net.dvazquez.conecta4.model.game.Turn;
 
 public class Conecta4 {
@@ -25,5 +26,13 @@ public class Conecta4 {
 
     public Turn getTurn() {
         return this.turn;
+    }
+
+    public boolean hasGoal() {
+        return this.board.hasGoal();
+    }
+
+    public Color getCurrentColor() {
+        return this.turn.getCurrentColor();
     }
 }

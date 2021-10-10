@@ -31,4 +31,12 @@ public class Place {
         return this.chip;
     }
 
+    public Coordinate getCoordinate() {
+        return this.coordinate;
+    }
+
+    public Color getColor() {
+        return this.chip.getColor();
+    }
+
 }
