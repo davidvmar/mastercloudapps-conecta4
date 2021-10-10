@@ -65,18 +65,18 @@ public class Board {
         return this.columns[coordinate.getX()].getColorByPosition(coordinate.getY());
     }
 
-    private List<List<Coordinate>> getCandidateGroupsByDirection(Coordinate lastCoordinate, CoordinateDirection direction) {
+    private List<List<Coordinate>> getCandidateGroupsByDirection(Coordinate coordinate, CoordinateDirection direction) {
         List<List<Coordinate>> groupsOfCandidates = new ArrayList();
-        Coordinate firstCandidateCoordinate = getFirstCandidateCoordinate(lastCoordinate, direction);
-        boolean handleLastPut = false;
+        Coordinate firstCandidateCoordinate = getFirstCandidateCoordinate(coordinate, direction);
+        boolean handleStarterCoordinate = false;
         do {
             List<Coordinate> candidate = getCandidateByFirstCoordinate(firstCandidateCoordinate, direction);
             if (candidate.size() == 4) {
                 groupsOfCandidates.add(candidate);
             }
-            handleLastPut = firstCandidateCoordinate.equals(lastCoordinate);
+            handleStarterCoordinate = firstCandidateCoordinate.equals(coordinate);
             firstCandidateCoordinate = direction.getNext(firstCandidateCoordinate);
-        } while (isInLimits(firstCandidateCoordinate) && !handleLastPut);
+        } while (isInLimits(firstCandidateCoordinate) && !handleStarterCoordinate);
 
         return groupsOfCandidates;
     }
@@ -91,10 +91,10 @@ public class Board {
         return firstCandidateCoordinate;
     }
 
-    private List<Coordinate> getCandidateByFirstCoordinate(Coordinate firstCoordinate, CoordinateDirection direction) {
+    private List<Coordinate> getCandidateByFirstCoordinate(Coordinate coordinate, CoordinateDirection direction) {
         List<Coordinate> candidate = new ArrayList();
-        candidate.add(firstCoordinate);
-        Coordinate nextCoordinate = firstCoordinate;
+        candidate.add(coordinate);
+        Coordinate nextCoordinate = coordinate;
         do {
             nextCoordinate = direction.getNext(nextCoordinate);
             if (isInLimits(nextCoordinate)) {
