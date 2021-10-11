@@ -1,6 +1,6 @@
 package net.dvazquez.conecta4.views.console;
 
-import net.dvazquez.conecta4.controllers.Logic;
+import net.dvazquez.conecta4.controllers.Controller;
 import net.dvazquez.conecta4.utils.models.Coordinate;
 import net.dvazquez.conecta4.utils.views.Console;
 
@@ -12,17 +12,17 @@ public class BoardView {
     private static final String MARGIN_LEFT = "          ";
     private static final String DELIMITER = "|";
 
-    public void print(Logic logic) {
+    public void print(Controller controller) {
         printHeader();
-        for (int i = logic.getNumRows() - 1; i >= 0; i--) {
+        for (int i = controller.getNumRows() - 1; i >= 0; i--) {
             StringBuilder rowSb = new StringBuilder(MARGIN_LEFT + DELIMITER);
-            for (int j = 0; j < logic.getNumColumns(); j++) {
-                rowSb.append(logic.getColor(new Coordinate(j, i)).getSymbol());
+            for (int j = 0; j < controller.getNumColumns(); j++) {
+                rowSb.append(controller.getColor(new Coordinate(j, i)).getSymbol());
             }
             rowSb.append(DELIMITER);
             Console.getInstance().writeln(rowSb.toString());
         }
-        printFooter(logic.getNumColumns());
+        printFooter(controller.getNumColumns());
     }
 
     private void printHeader() {

@@ -1,18 +1,14 @@
 package net.dvazquez.conecta4.views.console;
 
-import net.dvazquez.conecta4.controllers.Logic;
+import net.dvazquez.conecta4.controllers.StartController;
 import net.dvazquez.conecta4.views.Messages;
-import net.dvazquez.conecta4.views.WithLogicView;
 
-class StartView extends WithLogicView {
+class StartView  {
 
-    StartView(Logic logic) {
-        super(logic);
-    }
-
-    void interact() {
-        new GreetingView().print(Messages.GREETING_PLAYERS, String.valueOf(this.logic.getNumPlayers()));
-        new BoardView().print(this.logic);
+    void interact(StartController startController) {
+        new GreetingView().print(Messages.GREETING_PLAYERS, String.valueOf(startController.getNumPlayers()));
+        new BoardView().print(startController);
+        startController.nextState();
     }
 
 }

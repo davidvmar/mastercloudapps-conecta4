@@ -1,22 +1,18 @@
 package net.dvazquez.conecta4.views.console;
 
-import net.dvazquez.conecta4.controllers.Logic;
+import net.dvazquez.conecta4.controllers.PlayController;
 import net.dvazquez.conecta4.views.Messages;
-import net.dvazquez.conecta4.views.WithLogicView;
 
-class PlayView extends WithLogicView {
+class PlayView {
 
-    PlayView(Logic logic) {
-        super(logic);
-    }
-
-    void interact() {
+    void interact(PlayController playController) {
         do {
-            new PlayerView(this.logic).interact();
-            this.logic.next();
-            new BoardView().print(this.logic);
-        } while (!this.logic.hasGoal());
-        new MessageView().writeln(Messages.PLAYER_WIN, this.logic.getCurrentColor().name());
+            new PlayerView(playController).interact();
+            playController.next();
+            new BoardView().print(playController);
+        } while (!playController.hasGoal());
+        new MessageView().writeln(Messages.PLAYER_WIN, playController.getCurrentColor().name());
+        playController.nextState();
     }
 
 }

@@ -1,17 +1,15 @@
 package net.dvazquez.conecta4.views;
 
-import net.dvazquez.conecta4.controllers.Logic;
+import net.dvazquez.conecta4.controllers.PlayController;
+import net.dvazquez.conecta4.controllers.ResumeController;
+import net.dvazquez.conecta4.controllers.StartController;
 
-public abstract class View extends WithLogicView {
+public interface View {
 
-    public View(Logic logic) {
-        super(logic);
-    }
+    void start(StartController startController);
 
-    public abstract void start();
+    void play(PlayController playController);
 
-    public abstract void play();
-
-    public abstract boolean resume();
+    boolean resume(ResumeController resumeController);
 
 }

@@ -38,7 +38,7 @@ public class Console {
                 input = Integer.parseInt(this.readString(title));
                 ok = true;
             } catch (Exception ex) {
-                this.writeError("integer");
+                this.writeError("entero");
             }
         } while (!ok);
         return input;
@@ -50,7 +50,7 @@ public class Console {
         do {
             String input = this.readString(title);
             if (input.length() != 1) {
-                this.writeError("character");
+                this.writeError("caracter");
             } else {
                 charValue = input.charAt(0);
                 ok = true;
@@ -86,7 +86,7 @@ public class Console {
     }
 
     public void writeError(String format) {
-        this.write("FORMAT ERROR! Enter a " + format + " formatted value.");
+        this.write("FORMAT ERROR! Introduzca un " + format + " con un formato correcto.");
         this.writeln();
     }
 

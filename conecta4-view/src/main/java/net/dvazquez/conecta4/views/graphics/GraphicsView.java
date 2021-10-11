@@ -1,24 +1,23 @@
 package net.dvazquez.conecta4.views.graphics;
 
-import net.dvazquez.conecta4.controllers.Logic;
+import net.dvazquez.conecta4.controllers.PlayController;
+import net.dvazquez.conecta4.controllers.ResumeController;
+import net.dvazquez.conecta4.controllers.StartController;
 import net.dvazquez.conecta4.views.View;
 
-public class GraphicsView extends View {
+public class GraphicsView implements View {
 
-    public GraphicsView(Logic logic) {
-        super(logic);
+
+    @Override
+    public void start(StartController startController) {
     }
 
     @Override
-    public void start() {
+    public void play(PlayController playController) {
     }
 
     @Override
-    public void play() {
-    }
-
-    @Override
-    public boolean resume() {
+    public boolean resume(ResumeController resumeController) {
         return true;
     }
 
