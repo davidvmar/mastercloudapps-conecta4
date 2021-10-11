@@ -46,6 +46,9 @@ public class Player {
     }
 
     public Error getPutChipError(int column) {
+        if (!this.board.isInRange(column)) {
+            return Error.COLUMN_OUT_OF_RANGE;
+        }
         if (this.board.isFull(column)) {
             return Error.COLUMN_IS_FULL;
         }

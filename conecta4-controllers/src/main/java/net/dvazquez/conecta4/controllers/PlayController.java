@@ -19,7 +19,7 @@ public class PlayController extends Controller {
         this.game.next();
     }
 
-    public Color getActiveColor() {
+    public Color getCurrentColor() {
         return this.game.getCurrentColor();
     }
 
