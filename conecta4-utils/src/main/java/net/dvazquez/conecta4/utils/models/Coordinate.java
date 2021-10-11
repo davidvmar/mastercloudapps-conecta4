@@ -33,6 +33,7 @@ public class Coordinate {
     }
 
     public boolean isInLimits(int minX, int maxX, int minY, int maxY) {
+        assert minX <= maxX && minY <= maxY;
         return this.x >= minX && this.x <= maxX && this.y >= minY && this.y <= maxY;
     }
 

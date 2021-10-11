@@ -56,6 +56,11 @@ public class Board {
         return this.columns[column].isFull();
     }
 
+    public boolean isInRange(int column) {
+        assert column >= 0;
+        return column >= 0 && column < this.columns.length;
+    }
+
     private boolean isEmpty() {
         return Arrays.stream(this.columns).allMatch(Column::isEmpty);
     }

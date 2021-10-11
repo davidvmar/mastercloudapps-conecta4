@@ -19,9 +19,8 @@ public class Turn {
         }
     }
 
-    public boolean putChip(int columnToAddChip) {
-        boolean putChipWasOk = this.getCurrentPlayer().putChip(columnToAddChip);
-        return putChipWasOk;
+    public void putChip(int columnToAddChip) {
+        this.getCurrentPlayer().putChip(columnToAddChip);
     }
 
     public Player getCurrentPlayer() {

@@ -14,26 +14,12 @@ public class Game {
         this.turn = new Turn(this.board);
     }
 
-    public void play() {
-//        do {
-//            this.turn.play();
-//        } while (!this.board.hasGoal());
-    }
-
-    public Board getBoard() {
-        return this.board;
-    }
-
-    public Turn getTurn() {
-        return this.turn;
-    }
-
     public boolean hasGoal() {
         return this.board.hasGoal();
     }
 
-    public boolean putChip(int column) {
-        return this.turn.putChip(column);
+    public void putChip(int column) {
+        this.turn.putChip(column);
     }
 
     public Color getCurrentColor() {

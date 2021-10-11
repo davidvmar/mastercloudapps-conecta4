@@ -8,7 +8,7 @@ public class ErrorView extends net.dvazquez.conecta4.views.ErrorView {
     @Override
     public void writeln(Error error) {
         if (!error.isNull()) {
-            Console.getInstance().writeln(
+            Console.getInstance().writeln("ERROR: " +
                     net.dvazquez.conecta4.views.ErrorView.MESSAGES.get(error));
         }
     }
