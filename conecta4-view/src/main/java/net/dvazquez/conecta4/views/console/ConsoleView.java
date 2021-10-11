@@ -18,17 +18,17 @@ public class ConsoleView implements View {
     }
 
     @Override
-    public void start(StartController startController) {
+    public void visit(StartController startController) {
         this.startView.interact(startController);
     }
 
     @Override
-    public void play(PlayController playController) {
+    public void visit(PlayController playController) {
         this.playView.interact(playController);
     }
 
     @Override
-    public boolean resume(ResumeController resumeController) {
+    public boolean visit(ResumeController resumeController) {
         return this.resumeView.interact(resumeController);
     }
 
