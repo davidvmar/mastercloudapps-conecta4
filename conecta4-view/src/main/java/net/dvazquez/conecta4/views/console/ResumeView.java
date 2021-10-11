@@ -1,21 +1,18 @@
 package net.dvazquez.conecta4.views.console;
 
-import net.dvazquez.conecta4.controllers.Logic;
+import net.dvazquez.conecta4.controllers.ResumeController;
 import net.dvazquez.conecta4.utils.views.YesNoDialog;
 import net.dvazquez.conecta4.views.Messages;
-import net.dvazquez.conecta4.views.WithLogicView;
 
-class ResumeView extends WithLogicView {
+class ResumeView {
 
-    ResumeView(Logic logic) {
-        super(logic);
-    }
-
-    boolean interact() {
+    boolean interact(ResumeController resumeController) {
         YesNoDialog isResumed = new YesNoDialog();
         isResumed.read(Messages.RESUME.toString());
         if (isResumed.isAffirmative()) {
-            this.logic.reset();
+            resumeController.reset();
+        } else {
+            resumeController.nextState();
         }
         return isResumed.isAffirmative();
     }

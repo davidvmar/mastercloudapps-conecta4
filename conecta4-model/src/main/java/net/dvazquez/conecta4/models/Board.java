@@ -45,7 +45,12 @@ public class Board {
     }
 
     public Color getColor(Coordinate coordinate) {
+        assert coordinate != null && isInLimits(coordinate);
         return this.columns[coordinate.getX()].getColor(coordinate.getY());
+    }
+
+    private boolean isInLimits(Coordinate coordinate) {
+        return coordinate.isInLimits(0, COLUMNS - 1, 0, ROWS - 1);
     }
 
     public void reset() {
@@ -73,21 +78,15 @@ public class Board {
         List<List<Coordinate>> candidateGroups = getCandidateGroups(lastCoordinate);
         return candidateGroups.stream()
                 .anyMatch(candidate -> candidate.stream()
-                        .allMatch(coordinate -> this.columns[lastColumn].getLastColor()
-                                .equals(getColorByCoordinate(coordinate))));
+                        .allMatch(coordinate -> this.columns[lastColumn].getLastColor().equals(getColor(coordinate))));
     }
 
-    private List<List<Coordinate>> getCandidateGroups(Coordinate lastCoordinate) {
+    private List<List<Coordinate>> getCandidateGroups(Coordinate coordinate) {
         List<List<Coordinate>> candidateGroups = new ArrayList();
         for (int i = 0; i < CoordinateDirection.values().length; i++) {
-            candidateGroups.addAll(getCandidateGroupsByDirection(lastCoordinate, CoordinateDirection.values()[i]));
+            candidateGroups.addAll(getCandidateGroupsByDirection(coordinate, CoordinateDirection.values()[i]));
         }
         return candidateGroups;
-    }
-
-    private Color getColorByCoordinate(Coordinate coordinate) {
-        assert coordinate != null && isInLimits(coordinate);
-        return this.columns[coordinate.getX()].getColor(coordinate.getY());
     }
 
     private List<List<Coordinate>> getCandidateGroupsByDirection(Coordinate coordinate, CoordinateDirection direction) {
@@ -129,9 +128,6 @@ public class Board {
         return candidate;
     }
 
-    private boolean isInLimits(Coordinate coordinate) {
-        return coordinate.isInLimits(0, COLUMNS - 1, 0, ROWS - 1);
-    }
 
 
 

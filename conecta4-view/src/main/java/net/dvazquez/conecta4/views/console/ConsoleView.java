@@ -1,34 +1,35 @@
 package net.dvazquez.conecta4.views.console;
 
-import net.dvazquez.conecta4.controllers.Logic;
+import net.dvazquez.conecta4.controllers.PlayController;
+import net.dvazquez.conecta4.controllers.ResumeController;
+import net.dvazquez.conecta4.controllers.StartController;
 import net.dvazquez.conecta4.views.View;
 
-public class ConsoleView extends View {
+public class ConsoleView implements View {
 
     private StartView startView;
     private PlayView playView;
     private ResumeView resumeView;
 
-    public ConsoleView(Logic logic) {
-        super(logic);
-        this.startView = new StartView(logic);
-        this.playView = new PlayView(logic);
-        this.resumeView = new ResumeView(logic);
+    public ConsoleView() {
+        this.startView = new StartView();
+        this.playView = new PlayView();
+        this.resumeView = new ResumeView();
     }
 
     @Override
-    public void start() {
-        this.startView.interact();
+    public void start(StartController startController) {
+        this.startView.interact(startController);
     }
 
     @Override
-    public void play() {
-        this.playView.interact();
+    public void play(PlayController playController) {
+        this.playView.interact(playController);
     }
 
     @Override
-    public boolean resume() {
-        return this.resumeView.interact();
+    public boolean resume(ResumeController resumeController) {
+        return this.resumeView.interact(resumeController);
     }
 
 }

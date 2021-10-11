@@ -1,15 +1,22 @@
 package net.dvazquez.conecta4.controllers;
 
 import net.dvazquez.conecta4.models.Game;
+import net.dvazquez.conecta4.models.State;
 import net.dvazquez.conecta4.types.Color;
 import net.dvazquez.conecta4.utils.models.Coordinate;
 
 public abstract class Controller {
 
     protected Game game;
+    protected State state;
 
-    Controller(Game game) {
+    Controller(Game game, State state) {
         this.game = game;
+        this.state = state;
+    }
+
+    public void nextState() {
+        this.state.next();
     }
 
     public Color getColor(Coordinate coordinate) {

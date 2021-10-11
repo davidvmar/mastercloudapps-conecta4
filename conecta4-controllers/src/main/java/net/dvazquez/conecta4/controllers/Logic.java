@@ -1,61 +1,29 @@
 package net.dvazquez.conecta4.controllers;
 
 import net.dvazquez.conecta4.models.Game;
-import net.dvazquez.conecta4.types.Color;
-import net.dvazquez.conecta4.types.Error;
-import net.dvazquez.conecta4.utils.models.Coordinate;
+import net.dvazquez.conecta4.models.State;
+import net.dvazquez.conecta4.models.StateValue;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Logic {
 
     private Game game;
-    private StartController startController;
-    private PlayController playController;
-    private ResumeController resumeController;
+    private State state;
+    private Map<StateValue, Controller> controllers;
 
     public Logic() {
         this.game = new Game();
-        this.startController = new StartController(this.game);
-        this.playController = new PlayController(this.game);
-        this.resumeController = new ResumeController(this.game);
+        this.state = new State();
+        this.controllers = new HashMap<StateValue, Controller>();
+        this.controllers.put(StateValue.INITIAL, new StartController(this.game, this.state));
+        this.controllers.put(StateValue.IN_GAME, new PlayController(this.game, this.state));
+        this.controllers.put(StateValue.RESUME, new ResumeController(this.game, this.state));
+        this.controllers.put(StateValue.EXIT, null);
     }
 
-    public int getNumRows() {
-        return this.playController.getNumRows();
-    }
-
-    public int getNumColumns() {
-        return this.playController.getNumColumns();
-    }
-
-    public Color getColor(Coordinate coordinate) {
-        return this.playController.getColor(coordinate);
-    }
-
-    public int getNumPlayers() {
-        return this.playController.getNumPlayers();
-    }
-
-    public void next() {
-        this.playController.next();
-    }
-
-    public boolean hasGoal() {
-        return this.playController.hasGoal();
-    }
-
-    public Color getCurrentColor() {
-        return this.playController.getCurrentColor();
-    }
-
-    public void reset() {
-        this.resumeController.reset();
-    }
-
-    public void putChip(int colummn) {
-        this.playController.putChip(colummn);
-    }
-
-    public Error getPutChipError(int column) {
-        return this.playController.getPutChipError(column);
+    public Controller getController() {
+        return this.controllers.get(this.state.getValueState());
     }
 }

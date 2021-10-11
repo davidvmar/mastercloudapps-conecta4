@@ -1,18 +1,19 @@
 package net.dvazquez.conecta4.views.console;
 
-import net.dvazquez.conecta4.controllers.Logic;
+import net.dvazquez.conecta4.controllers.PlayController;
 import net.dvazquez.conecta4.types.Error;
 import net.dvazquez.conecta4.views.Messages;
-import net.dvazquez.conecta4.views.WithLogicView;
 
-class PlayerView extends WithLogicView {
+class PlayerView {
 
-    PlayerView(Logic logic) {
-        super(logic);
+    private PlayController playController;
+
+    PlayerView(PlayController playController) {
+        this.playController = playController;
     }
 
     void interact() {
-        if (!this.logic.hasGoal()) {
+        if (!this.playController.hasGoal()) {
             this.addChip();
         }
     }
@@ -24,16 +25,16 @@ class PlayerView extends WithLogicView {
             colummn = this.getColumn(Messages.PLAYER_COLUMN_TO_ADD_CHIP);
             error = this.getPutChipError(colummn);
         } while (!error.isNull());
-        this.logic.putChip(colummn);
+        this.playController.putChip(colummn);
     }
 
     int getColumn(Messages message) {
         assert message != null;
-        return new ColumnView().read(this.logic.getCurrentColor().toString());
+        return new ColumnView().read(this.playController.getCurrentColor().toString());
     }
 
     private Error getPutChipError(int column) {
-        Error error = this.logic.getPutChipError(column);
+        Error error = this.playController.getPutChipError(column);
         new ErrorView().writeln(error);
         return error;
     }
