@@ -34,4 +34,6 @@ public abstract class Controller {
     public int getNumPlayers() {
         return this.game.getNumPlayers();
     }
+
+    public abstract void accept(ControllersVisitor visitor);
 }

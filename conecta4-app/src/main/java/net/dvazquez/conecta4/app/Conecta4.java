@@ -1,9 +1,6 @@
 package net.dvazquez.conecta4.app;
 
-import net.dvazquez.conecta4.controllers.Logic;
-import net.dvazquez.conecta4.controllers.PlayController;
-import net.dvazquez.conecta4.controllers.ResumeController;
-import net.dvazquez.conecta4.controllers.StartController;
+import net.dvazquez.conecta4.controllers.*;
 import net.dvazquez.conecta4.views.View;
 
 public abstract class Conecta4 {
@@ -19,16 +16,12 @@ public abstract class Conecta4 {
     protected abstract View createView();
 
     protected void play() {
+        Controller controller;
         do {
-            if (this.logic.getController() instanceof StartController) {
-                this.view.start((StartController) this.logic.getController());
-            } else {
-                if (this.logic.getController() instanceof PlayController) {
-                    this.view.play((PlayController) this.logic.getController());
-                } else {
-                    this.view.resume((ResumeController) this.logic.getController());
-                }
+            controller = this.logic.getController();
+            if (controller != null) {
+                controller.accept(this.view);
             }
-        } while (this.logic.getController() != null);
+        } while (controller != null);
     }
 }

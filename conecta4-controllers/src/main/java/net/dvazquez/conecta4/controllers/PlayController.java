@@ -32,4 +32,8 @@ public class PlayController extends Controller {
         return this.game.getPutChipError(column);
     }
 
+    @Override
+    public void accept(ControllersVisitor visitor) {
+        visitor.visit(this);
+    }
 }

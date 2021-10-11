@@ -7,17 +7,16 @@ import net.dvazquez.conecta4.views.View;
 
 public class GraphicsView implements View {
 
-
     @Override
-    public void start(StartController startController) {
+    public void visit(StartController startController) {
     }
 
     @Override
-    public void play(PlayController playController) {
+    public void visit(PlayController playController) {
     }
 
     @Override
-    public boolean resume(ResumeController resumeController) {
+    public boolean visit(ResumeController resumeController) {
         return true;
     }
 

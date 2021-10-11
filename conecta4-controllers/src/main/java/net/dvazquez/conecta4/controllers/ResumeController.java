@@ -14,4 +14,9 @@ public class ResumeController extends Controller {
         this.state.reset();
     }
 
+    @Override
+    public void accept(ControllersVisitor visitor) {
+        visitor.visit(this);
+    }
+
 }
