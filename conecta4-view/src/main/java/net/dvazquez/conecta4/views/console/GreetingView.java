@@ -5,11 +5,12 @@ import net.dvazquez.conecta4.views.Messages;
 
 public class GreetingView {
 
-    public static void printGreeting(String greeting) {
-        Console.getInstace().writeln(greeting);
-    }
-
-    public static void printGreeting(Messages greeting, String data) {
-        Console.getInstace().writeln(String.format(greeting.getMessage(), data));
+    public void print(Messages greeting, String data) {
+        Console.getInstance().writeln();
+        Console.getInstance().writeln("****************************************************************");
+        Console.getInstance().writeln("*************************** CONECTA4 ***************************");
+        Console.getInstance().writeln("****************************************************************");
+        Console.getInstance().writeln();
+        Console.getInstance().writeln(String.format(greeting.getMessage(), data));
     }
 }

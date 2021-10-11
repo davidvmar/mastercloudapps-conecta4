@@ -7,7 +7,7 @@ public class Console {
 
     private static Console instace;
 
-    public static Console getInstace() {
+    public static Console getInstance() {
         if (instace == null) {
             instace = new Console();
         }
