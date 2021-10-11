@@ -1,7 +1,7 @@
 package net.dvazquez.conecta4.models;
 
-import net.dvazquez.conecta4.models.board.Board;
 import net.dvazquez.conecta4.types.Color;
+import net.dvazquez.conecta4.types.Error;
 
 public class Turn {
 
@@ -15,15 +15,12 @@ public class Turn {
         assert Color.values().length >= PLAYERS_NUMBER || PLAYERS_NUMBER % Color.values().length == 0;
         this.board = board;
         for (int i = 0; i < PLAYERS_NUMBER; i++) {
-            players[i] = new Player(Color.values()[i % Color.values().length]);
+            players[i] = new Player(Color.values()[i % Color.values().length], this.board);
         }
     }
 
     public boolean putChip(int columnToAddChip) {
-        boolean putChipWasOk = this.getCurrentPlayer().putChip(this.board, columnToAddChip);
-        if (putChipWasOk) {
-            currentPlayerIndex = (currentPlayerIndex + 1) % PLAYERS_NUMBER;
-        }
+        boolean putChipWasOk = this.getCurrentPlayer().putChip(columnToAddChip);
         return putChipWasOk;
     }
 
@@ -41,5 +38,22 @@ public class Turn {
 
     public Color getCurrentColor() {
         return this.getCurrentPlayer().getColor();
+    }
+
+    public void reset() {
+        for (int i = 0; i < PLAYERS_NUMBER; i++) {
+            players[i].reset();
+        }
+        currentPlayerIndex = 0;
+    }
+
+    public Error getPutChipError(int column) {
+        return this.getCurrentPlayer().getPutChipError(column);
+    }
+
+    public void next() {
+        if (!this.board.hasGoal()) {
+            this.currentPlayerIndex = (this.currentPlayerIndex + 1) % PLAYERS_NUMBER;
+        }
     }
 }

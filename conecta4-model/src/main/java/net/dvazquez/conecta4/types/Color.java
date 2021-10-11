@@ -14,4 +14,8 @@ public enum Color {
     public String getSymbol() {
         return this.symbol;
     }
+
+    public boolean isNull() {
+        return this == Color.NULL;
+    }
 }

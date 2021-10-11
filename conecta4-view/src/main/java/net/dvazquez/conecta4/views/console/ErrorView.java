@@ -1,11 +1,15 @@
 package net.dvazquez.conecta4.views.console;
 
+import net.dvazquez.conecta4.types.Error;
 import net.dvazquez.conecta4.utils.views.Console;
-import net.dvazquez.conecta4.views.Messages;
 
-public class ErrorView {
+public class ErrorView extends net.dvazquez.conecta4.views.ErrorView {
 
-    public void print(Messages message) {
-        Console.getInstace().writeln(message.getMessage());
+    @Override
+    public void writeln(Error error) {
+        if (!error.isNull()) {
+            Console.getInstance().writeln(
+                    net.dvazquez.conecta4.views.ErrorView.MESSAGES.get(error));
+        }
     }
 }

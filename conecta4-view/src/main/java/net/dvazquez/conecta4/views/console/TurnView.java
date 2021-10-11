@@ -13,7 +13,7 @@ public class TurnView {
     }
 
     public int print() {
-        return Console.getInstace()
+        return Console.getInstance()
                 .readInt(String.format(Messages.PLAYER_COLUMN_TO_ADD_CHIP.getMessage(),
                         String.valueOf(this.turn.getCurrentPlayerIndex() + 1)));
     }

@@ -12,6 +12,8 @@
         <module>conecta4-model</module>
         <module>conecta4-view</module>
         <module>conecta4-utils</module>
+        <module>conecta4-app</module>
+        <module>conecta4-controllers</module>
     </modules>
 
     <properties>
