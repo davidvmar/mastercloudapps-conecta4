@@ -1,0 +1,37 @@
+@startuml arquitectura
+package conecta4 #DDDDDD { }
+conecta4 .down.> conecta4.views.graphics
+conecta4 .down.> conecta4.views.console
+conecta4 .down.> conecta4.controllers
+conecta4 .down.> conecta4.views
+
+package conecta4.controllers #DDDDDD { }
+conecta4.controllers .down.> conecta4.models
+
+package conecta4.models #DDDDDD { }
+conecta4.models .down.> conecta4.types
+package conecta4.types #DDDDDD { }
+package java.util{ }
+conecta4.models .down.> java.util
+conecta4.controllers .down.> java.util
+
+package conecta4.utils #DDDDDD { }
+package java.io{ }
+conecta4.utils .down.> java.io
+
+package conecta4.views #DDDDDD { }
+conecta4.views .down.> conecta4.types
+conecta4.views .down.> conecta4.controllers
+conecta4.views .down.> conecta4.utils
+
+package conecta4.views.console #DDDDDD { }
+conecta4.views.console .down.> conecta4.types
+conecta4.views.console .down.> conecta4.views
+conecta4.views.console .down.> conecta4.controllers
+conecta4.views.console .down.> conecta4.utils
+
+package conecta4.views.graphics #DDDDDD { }
+conecta4.views.graphics .down.> conecta4.views
+conecta4.views.graphics .down.> conecta4.controllers
+
+@enduml

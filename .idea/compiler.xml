@@ -6,8 +6,32 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="withPrototype" />
+        <module name="basic (2) (domainModel)" />
         <module name="conecta4-model" />
+        <module name="doubleDispatching" />
+        <module name="conecta4-app" />
+        <module name="modelViewController" />
+        <module name="withProxy" />
+        <module name="withComposite" />
+        <module name="withoutDoubleDispatching" />
+        <module name="basic (1) (documentView)" />
+        <module name="withDoubleDispatching" />
+        <module name="withoutPrototype" />
+        <module name="passiveView" />
+        <module name="withoutProxy" />
+        <module name="supervisorController" />
+        <module name="withDAO" />
+        <module name="withoutFactoryMethod" />
+        <module name="machine (2) (domainModel)" />
+        <module name="prototype" />
         <module name="conecta4-view" />
+        <module name="basic (3) (presentationModel)" />
+        <module name="conecta4-controllers" />
+        <module name="withFacade" />
+        <module name="withoutDAO" />
+        <module name="withFactoryMethod" />
+        <module name="conecta4-utils" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

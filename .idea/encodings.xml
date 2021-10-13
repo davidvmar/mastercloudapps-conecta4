@@ -1,8 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/../USantaTecla/java.swing.socket.sql/documentView/basic/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../USantaTecla/java.swing.socket.sql/documentView/machine/doubleDispatching/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../USantaTecla/java.swing.socket.sql/documentView/machine/prototype/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../USantaTecla/java.swing.socket.sql/documentView/withFactoryMethod/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../USantaTecla/java.swing.socket.sql/documentView/withoutFactoryMethod/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../USantaTecla/java.swing.socket.sql/domainModel/basic/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../USantaTecla/java.swing.socket.sql/domainModel/machine/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../USantaTecla/java.swing.socket.sql/modelViewController/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../USantaTecla/java.swing.socket.sql/modelViewPresenter/passiveView/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../USantaTecla/java.swing.socket.sql/modelViewPresenter/presentationModel/basic/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../USantaTecla/java.swing.socket.sql/modelViewPresenter/presentationModel/withComposite/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../USantaTecla/java.swing.socket.sql/modelViewPresenter/presentationModel/withDAO/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../USantaTecla/java.swing.socket.sql/modelViewPresenter/presentationModel/withDoubleDispatching/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../USantaTecla/java.swing.socket.sql/modelViewPresenter/presentationModel/withFacade/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../USantaTecla/java.swing.socket.sql/modelViewPresenter/presentationModel/withPrototype/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../USantaTecla/java.swing.socket.sql/modelViewPresenter/presentationModel/withProxy/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../USantaTecla/java.swing.socket.sql/modelViewPresenter/presentationModel/withoutDAO/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../USantaTecla/java.swing.socket.sql/modelViewPresenter/presentationModel/withoutDoubleDispatching/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../USantaTecla/java.swing.socket.sql/modelViewPresenter/presentationModel/withoutPrototype/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../USantaTecla/java.swing.socket.sql/modelViewPresenter/presentationModel/withoutProxy/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../USantaTecla/java.swing.socket.sql/modelViewPresenter/supervisorController/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/conecta4-app/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/conecta4-app/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/conecta4-controllers/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/conecta4-controllers/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/conecta4-model/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/conecta4-model/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/conecta4-utils/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/conecta4-utils/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/conecta4-view/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/conecta4-view/src/main/resources" charset="UTF-8" />
   </component>

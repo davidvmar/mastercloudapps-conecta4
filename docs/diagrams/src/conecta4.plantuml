@@ -1,0 +1,123 @@
+@startuml paqueteConecta4Models
+
+class conecta4.models.Game{
+  + Game()
+  + hasGoal()
+  + putChip(int column)
+  + getCurrentColor(): Color
+  + getColor(Coordinate): Color
+  + getNumColumns(): int
+  + getNumRows(): int
+  + getNumPlayers(): int
+  + reset()
+  + getPutChipError(int): Error
+  + next()
+}
+conecta4.models.Game *-down-> conecta4.models.Board
+conecta4.models.Game *-down-> conecta4.models.Turn
+conecta4.models.Game .down.> conecta4.types.Error
+conecta4.models.Game .down.> conecta4.types.Color
+
+class conecta4.models.Board{
+  + {static} COLUMNS: int
+  + {static} ROWS: int
+  - lastColumn: int
+  + Board()
+  + canAddChip(int): boolean
+  + addChip(Color, int)
+  + getNumColumns(): int
+  + getNumRows(): int
+  + getColor(Coordinate): Color
+  + isInLimits(Coordinate): boolean
+  + reset()
+  + isFull(int): boolean
+  + isInRange(int): boolean
+  + isEmpty(): boolean
+  + hasGoal(): boolean
+  - getCandidateGroups(Coordinate): List<List<Coordinate>>
+  - getCandidateGroupsByDirection(Coordinate, CoordinateDirection): List<List<Coordinate>>
+  - getFirstCandidateCoordinate(Coordinate, CoordinateDirection): Coordinate
+  - getCandidateByFirstCoordinate(Coordinate, CoordinateDirection): List<Coordinate>
+}
+
+conecta4.models.Board .down.> conecta4.types.CoordinateDirection
+conecta4.models.Board .down.> conecta4.types.Color
+conecta4.models.Board "columns" *-down-> conecta4.models.Column
+
+class conecta4.models.Column{
+  + Column(int)
+  + isFull(): boolean
+  + isEmpty(): boolean
+  + addChip(Color)
+  + getColor(int): Color
+  + getLastIndexWithColor(): int
+  + getLasColor(): Color
+  + reset()
+}
+
+conecta4.models.Column "places" *-down-> Color
+conecta4.models.Column .down.> Color
+
+class conecta4.models.Turn{
+  + {static} PLAYERS_NUMBER: int
+  - currentPlayerIndex: int
+  + Turn(Board)
+  + putChip(int)
+  + getCurrentPlayer(): Player
+  + getPlayersNumber(): int
+  + getCurrentColor(): Color
+  + reset()
+  ~ getPutChipError(int): Error
+  + next()
+}
+
+conecta4.models.Turn *-down-> "*" conecta4.models.Player
+conecta4.models.Turn *-down-> conecta4.models.Board
+conecta4.models.Turn .down.> conecta4.models.Player
+conecta4.models.Turn .down.> conecta4.types.Color
+conecta4.models.Turn .down.-> conecta4.types.Error
+
+class conecta4.models.Player{
+  + {static} PIECES_BY_PLAYER: int
+  + putChip(int): boolean
+  + getColor(): Color
+  + reset()
+  + getPutChipError(int): Error
+}
+conecta4.models.Player *-down-> conecta4.models.Board
+conecta4.models.Player *-down-> conecta4.types.Color
+conecta4.models.Player "chips" *-down-> conecta4.types.Color
+conecta4.models.Player .down.> conecta4.types.Color
+conecta4.models.Player .down.> conecta4.types.Error
+
+class conecta4.models.State{
+  + State()
+  + reset()
+  + next()
+  + getValueState(): StateValue
+}
+conecta4.models.State *-down-> conecta4.models.StateValue
+
+enum conecta4.models.StateValue{
+  + INITIAL
+  + IN_GAME
+  + RESUME
+  + EXIT
+}
+
+enum conecta4.types.Color{
+  + BLUE
+  + RED
+  + NULL
+}
+
+enum conecta4.types.CoordinateDirection{
+  + ROW
+  + COLUMN
+  + MAIN_DIAGONAL
+  + REVERSE_DIAGONAL
+}
+
+conecta4.types.CoordinateDirection .down.> Coordinate
+
+@enduml
