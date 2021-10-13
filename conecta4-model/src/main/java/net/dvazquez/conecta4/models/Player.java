@@ -22,10 +22,6 @@ public class Player {
         }
     }
 
-    public boolean hasChips() {
-        return !chips.isEmpty();
-    }
-
     public boolean putChip(int columnIndex) {
         if (this.board.canAddChip(columnIndex)) {
             this.board.addChip(this.chips.pop(), columnIndex);
