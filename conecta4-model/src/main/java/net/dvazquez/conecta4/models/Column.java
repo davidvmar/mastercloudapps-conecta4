@@ -16,10 +16,6 @@ public class Column {
         }
     }
 
-    public List<Color> getPlaces() {
-        return this.places;
-    }
-
     public boolean isFull() {
         return this.places.stream().noneMatch(Color::isNull);
     }

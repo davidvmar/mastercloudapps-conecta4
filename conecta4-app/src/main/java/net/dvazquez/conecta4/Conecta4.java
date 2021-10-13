@@ -1,4 +1,4 @@
-package net.dvazquez.conecta4.app;
+package net.dvazquez.conecta4;
 
 import net.dvazquez.conecta4.controllers.*;
 import net.dvazquez.conecta4.views.View;
