@@ -55,8 +55,8 @@ class conecta4.models.Column{
   + reset()
 }
 
-conecta4.models.Column "places" *-down-> Color
-conecta4.models.Column .down.> Color
+conecta4.models.Column "places" *-down-> conecta4.types.Color
+conecta4.models.Column .down.> conecta4.types.Color
 
 class conecta4.models.Turn{
   + {static} PLAYERS_NUMBER: int

@@ -4,7 +4,7 @@ David Vázquez Martínez
 
 ## Autoevaluación
 
-**7.5**
+**8**
 
 * PROS:
   * Se han aplicado las técnicas y principios vistos en la asignatura.
